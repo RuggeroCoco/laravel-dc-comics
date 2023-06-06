@@ -15,12 +15,14 @@
     <tbody>
         @foreach ($comics as $comic)
         <tr>
-            <th class="text-center">
-                <img class="w-50" src="{{$comic->thumb}}" alt="">
+            <th class="w-25">
+                <img class="w-25" src="{{$comic->thumb}}" alt="">
             </th>
             <td scope="row">{{$comic->title}}</td>
             <td>{{$comic->type}}</td>
-            <td></td>
+            <td>
+                <a class="btn btn-success" href="{{route('comics.show', $comic->id)}}">Dettagli</a>
+            </td>
         </tr>
         @endforeach
     </tbody>
